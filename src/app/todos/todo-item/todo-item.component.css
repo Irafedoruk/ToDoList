@@ -1,0 +1,19 @@
+.item {
+    display: flex;
+    align-items: flex-start;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.item p {
+    margin-right: 10px;
+}
+.styled1 {
+    background-color: rgb(164, 203, 218);            
+}
+.styled3 {
+    background-color: rgb(226, 226, 226);  
+    text-decoration: line-through;                   
+}
+.priority {
+    color: red;
+}
