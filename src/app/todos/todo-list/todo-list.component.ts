@@ -12,7 +12,7 @@ import { TodoItemComponent} from "../todo-item/todo-item.component";
 })
 export class TodoListComponent {
   todos: ITodo[] = [...TODOS];
-
+  filteredTodos: ITodo[] = [];
   clear() {
     this.todos = [];
   }
@@ -24,5 +24,15 @@ export class TodoListComponent {
   deleteTodo(id: number) {
     let index = this.todos.findIndex(x => x.id == id);
     this.todos.splice(index, 1);
+  }
+
+  sortTodosByDeadline() {
+    this.todos.sort((a, b) => {
+      return a.deadline.getTime() - b.deadline.getTime();
+    });
+  }
+
+  showPrioritiesOnly() {
+    this.filteredTodos = this.todos.filter(todo => todo.priority === '!');
   }
 }

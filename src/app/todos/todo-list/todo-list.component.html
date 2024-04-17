@@ -1,11 +1,14 @@
 <h2>My To Do List</h2>
 
 <div>
-    @if(!todos || todos.length == 0) {
-        <p>To Do List is empty!</p>
+    @if(!filteredTodos || filteredTodos.length == 0) {
+        @for (i of todos; track i.id)
+        {
+            <app-todo-item [todo]="i" (deleteEvent)="deleteTodo($event)"></app-todo-item>
+        }
     }
     @else {
-        @for (i of todos; track i.id)
+        @for (i of filteredTodos; track i.id)
         {
             <app-todo-item [todo]="i" (deleteEvent)="deleteTodo($event)"></app-todo-item>
         }
@@ -15,4 +18,6 @@
 <div>
     <button (click)="clear()">Clear all</button>
     <button (click)="load()">Load</button>
+    <button (click)="sortTodosByDeadline()">Sort by Deadline</button>
+    <button (click)="showPrioritiesOnly()">Show Priorities Only</button>
 </div>
