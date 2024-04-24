@@ -1,0 +1,25 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 30%;
+}
+
+form label {
+    display: flex;
+    gap: 4px;
+}
+
+form label input {
+    flex-grow: 1;
+}
+
+.col-2 {
+    display: flex;
+    gap: 4px;
+}
+
+.col-2>* {
+    flex-grow: 1;
+}

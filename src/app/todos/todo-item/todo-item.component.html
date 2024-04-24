@@ -1,7 +1,7 @@
 <div class="item styled1" [class.styled3]="todo.isDone" (click)="onClick()">    
     <p><img [src]="todo.isDone ? './assets/checked_16.png' : './assets/unchecked_16.png'" alt="Status Icon" /></p>
-    <p>{{todo.title}}</p>
     <p class="priority">{{todo.priority ? "!" : ""}}</p>
+    <p>{{todo.title}}</p>
     <p>{{ todo.isDone ? '' : formatDeadline(todo.deadline) }}</p>
     <button (click)="onDelete()"><img src="./assets/icons-delete-16.png"></button>
 </div>

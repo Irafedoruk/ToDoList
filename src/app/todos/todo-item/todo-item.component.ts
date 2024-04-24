@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ITodo } from '../todo';
 
@@ -23,17 +23,17 @@ export class TodoItemComponent {
     isDone: false,
     deadline: new Date()
   }
-
+  
   onClick() {
     this.todo.isDone = !this.todo.isDone;    
   }
   onDelete() {
     this.deleteEvent.emit(this.todo.id); 
   }
+
   formatDeadline(deadline: Date): string {
-    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return deadline.toLocaleDateString('en-US', options);
-  }
+    return deadline ? deadline.toDateString() : '';
+  }  
   
 }
 

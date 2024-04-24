@@ -1,0 +1,26 @@
+<h2>Create new Item</h2>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <label>
+        <span>Title: </span>
+        <input type="text" formControlName="title">
+    </label>
+    <label>
+        <span>Priority: </span>
+        <select formControlName="priority">
+            <option value="">Normal</option>
+            <option value="!">High</option>
+        </select>
+    </label>
+    <label>
+        <span>Deadline: </span>
+        <input type="Date" formControlName="deadline">
+    </label>
+    <label>
+        <span>Is done: </span>
+        <input type="checkbox" formControlName="isDone">
+    </label>
+    <div class="col-2">
+        <button type="reset">Cancel</button>
+        <button type="submit">Create</button>
+    </div>
+</form>
